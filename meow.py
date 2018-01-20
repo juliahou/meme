@@ -58,7 +58,7 @@ def test(l):
 	ans = []
 	for sub in l:
 		submission = sub[0]
-		ans.append([datetime.utcfromtimestamp(submission.created_utc), submission.title, submission.ups, submission.preview["images"][0]["source"]["url"]])
+		ans.append([datetime.utcfromtimestamp(submission.created_utc), submission.title, submission.ups, sub[1], submission.preview["images"][0]["source"]["url"]])
 	return ans
 
 def main():

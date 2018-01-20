@@ -4,5 +4,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def show_data():
-	data = meow.test()
+	data = meow.main()
 	return render_template('index.html', data=data)

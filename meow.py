@@ -31,7 +31,7 @@ def get_rising_post_attributes(instances):
         posts.extend(inst.rising(limit=3))
     postToAttributes = {}
     for post in posts:
-        postToAttributes[post] = (post.created_utc, post.ups, post.subreddit.subscribers)
+        postToAttributes[post] = (datetime.utcfromtimestamp(post.created_utc), post.ups, post.subreddit.subscribers)
     return postToAttributes
 
 # gives score to a post based on created time, upvotes, and subreddit size

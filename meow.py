@@ -1,5 +1,7 @@
 import praw
 from datetime import datetime
+from operator import itemgetter
+
 #from json.json_util import dumps
 
 reddit = praw.Reddit(client_id='rueV3_rhsdbfgg',
@@ -39,11 +41,11 @@ def score(created, ups, sr_size):
     now = datetime.now()
     print created
     elapsed_time = now - created
-    elapsed_time_minutes = elapsed_time.total_minutes()
+    elapsed_time_minutes = elapsed_time.total_seconds()/60
     if(elapsed_time_minutes > 120):
-        return 1.0 * upvotes / sr_size
+        return 1.0 * ups / sr_size
     else:
-	   return 1.0 * upvotes / sr_size / (1.0 * elapsed_time_minutes / 120)
+	   return 1.0 * ups / sr_size / (1.0 * elapsed_time_minutes / 120)
 
 # gives score to each post in d, sorts and takes top ones
 def score_sort(d):

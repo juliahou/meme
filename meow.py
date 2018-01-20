@@ -9,8 +9,7 @@ reddit = praw.Reddit(client_id='rueV3_rhsdbfgg',
 def test():
 	ans = []
 	subreddit = reddit.subreddit('memes')
-	for submission in subreddit.rising(limit=1):
-		print vars(submission)
+	for submission in subreddit.rising(limit=5):
 		ans.append([datetime.utcfromtimestamp(submission.created_utc), submission.title, submission.ups, submission.preview["images"][0]["source"]["url"]])
 	return ans
 

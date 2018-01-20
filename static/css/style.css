@@ -1,0 +1,16 @@
+header {
+	background-color: #000000;
+}
+
+header .container {
+	width: 75%;
+}
+
+.container {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+img {
+	max-width: 100%;
+}

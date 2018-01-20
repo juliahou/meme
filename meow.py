@@ -38,13 +38,23 @@ def get_rising_post_attributes(instances):
     postToAttributes = {}
     for post in posts:
         postToAttributes[post] = (post.created_utc, post.ups, post.subreddit.subscribers)
+    return postToAttributes
 
 # gives score to a post based on created time, upvotes, and subreddit size
 def score(created, ups, sr_size):
-	return 1
+    now = datetime.datetime.now()
+    elapsed_time = now - created
+    elapsed_time_minutes = elapsed_time.total_minutes()
+    if(elapsed_time_minutes > 120):
+        return 1.0 * upvotes / sr_size
+    else
+	   return 1.0 * upvotes / sr_size / (1.0 * elapsed_time_minutes / 120)
 
-# gives score to each post in l, sorts and takes top ones
-def quack(l):
-    return
+# gives score to each post in d, sorts and takes top ones
+def score_sort(d):
+    result_list = []
+    for key, value in d.iteritems():
+        result_list.append((key, score(value)))
+    return sorted(result_list, key=itemgetter(1))
 
 #lookup on origin?

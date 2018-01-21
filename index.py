@@ -24,10 +24,11 @@ sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 # goes through list of strings and creates subreddit instance for each
 
 def initialize_subreddits(sub_names):
-	instances = []
+	'''instances = []
 	for sub in sr:
 		instances.append(reddit.subreddit(sub))
-	return instances
+	return instances'''
+	return 1
 
 # goes through list of subreddit instances and gets top rising posts and their
 # created time and their upvote number, as well as the subreddit size

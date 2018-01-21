@@ -54,7 +54,7 @@ def score(created, ups, sr_size):
 # gives score to each post in d, sorts and takes top ones
 def score_sort(d):
 	result_list = []
-	for key, value in d.iteritems():
+	for key, value in d.items():
 		result_list.append((key, score(value[0], value[1], value[2])))
 	result_list = sorted(result_list, key=itemgetter(1))
 	result_list.reverse()

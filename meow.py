@@ -47,9 +47,9 @@ def score(created, ups, sr_size):
     elapsed_time = now - created
     elapsed_time_minutes = elapsed_time.total_seconds()/60
     if(elapsed_time_minutes > 120):
-        return 1.0 * ups / sr_size * 1000000
+        return (2.0 * ups) / sr_size * 1000000
     else:
-	   return 1.0 * ups / sr_size / (1.0 * elapsed_time_minutes / 120) * 1000000
+	   return (2.0 * ups) / sr_size / (1.0 * elapsed_time_minutes / 120) * 1000000
 
 # gives score to each post in d, sorts and takes top ones
 def score_sort(d):

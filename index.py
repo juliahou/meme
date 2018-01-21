@@ -4,11 +4,13 @@ import meow
 app = Flask(__name__)
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
-@app.route("/")
+'''@app.route("/")
 def show_data():
-	print "meow"
 	data = meow.main(10)
-	return render_template('index.html', data=data)
+	return render_template('index.html', data=data)'''
+@app.route("/")
+def hello():
+    return "Hello world!"
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))

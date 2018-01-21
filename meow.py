@@ -68,7 +68,7 @@ def test(l, n):
 		utc = datetime.utcfromtimestamp(submission.created_utc)
 		utc = utc.replace(tzinfo=from_zone)
 		est = utc.astimezone(to_zone)
-		ans.append([est, submission.title, sub[1], "http://reddit.com"+str(submission.permalink), submission.preview["images"][0]["source"]["url"]])
+		ans.append([est, submission.title, format(sub[1], '.2f'), "http://reddit.com"+str(submission.permalink), submission.preview["images"][0]["source"]["url"]])
 	return ans
 
 def main(n):

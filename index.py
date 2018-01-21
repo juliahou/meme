@@ -8,7 +8,7 @@ from dateutil import tz
 
 app = Flask(__name__)
 
-'''from_zone = tz.gettz('UTC')
+from_zone = tz.gettz('UTC')
 to_zone = tz.gettz('America/New_York')
 
 #from json.json_util import dumps
@@ -22,7 +22,7 @@ subreddit = reddit.subreddit('memes')
 sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 
 # goes through list of strings and creates subreddit instance for each
-
+'''
 def initialize_subreddits(sub_names):
 	instances = []
 	for sub in sr:

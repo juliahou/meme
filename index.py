@@ -67,6 +67,7 @@ def test(l, n):
 		utc = datetime.utcfromtimestamp(submission.created_utc)
 		utc = utc.replace(tzinfo=from_zone)
 		est = utc.astimezone(to_zone)
+		print(("http://reddit.com"+submission.permalink.encode('utf-8')).decode('utf-8'))
 		ans.append([est, submission.title, format(sub[1], '.2f'), ("http://reddit.com"+submission.permalink.encode('utf-8')).decode('utf-8'), submission.preview["images"][0]["source"]["url"]])
 	return ans
 

@@ -6,6 +6,7 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 @app.route("/")
 def show_data():
+	print "meow"
 	data = meow.main(10)
 	return render_template('index.html', data=data)
 

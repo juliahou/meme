@@ -5,11 +5,12 @@ import praw
 from datetime import datetime
 from operator import itemgetter
 from dateutil import tz
+import sys
+from importlib import reload
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 

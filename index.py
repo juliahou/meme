@@ -25,42 +25,40 @@ sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 # goes through list of strings and creates subreddit instance for each
 
 def initialize_subreddits(sub_names):
-	'''instances = []
+	instances = []
 	for sub in sr:
 		instances.append(reddit.subreddit(sub))
-	return instances'''
-	return 1
+	return instances
 
 # goes through list of subreddit instances and gets top rising posts and their
 # created time and their upvote number, as well as the subreddit size
 def get_rising_post_attributes(instances):
-    posts = []
-    for inst in instances:
-        posts.extend(inst.rising(limit=5))
-    postToAttributes = {}
-    for post in posts:
-        postToAttributes[post] = (datetime.utcfromtimestamp(post.created_utc), post.ups, post.subreddit.subscribers)
-    return postToAttributes
+	posts = []
+	for inst in instances:
+		posts.extend(inst.rising(limit=5))
+	postToAttributes = {}
+	for post in posts:
+		postToAttributes[post] = (datetime.utcfromtimestamp(post.created_utc), post.ups, post.subreddit.subscribers)
+	return postToAttributes
 
 # gives score to a post based on created time, upvotes, and subreddit size
 def score(created, ups, sr_size):
-    now = datetime.utcnow()
-    elapsed_time = now - created
-    elapsed_time_minutes = elapsed_time.total_seconds()/60
-    if(elapsed_time_minutes > 120):
-    	return (2.0 * ups) / sr_size * 1000000
-    else:
-    	return (2.0 * ups) / sr_size / (1.0 * elapsed_time_minutes / 120) * 1000000
+	now = datetime.utcnow()
+	elapsed_time = now - created
+	elapsed_time_minutes = elapsed_time.total_seconds()/60
+	if (elapsed_time_minutes > 120):
+		return (2.0 * ups) / sr_size * 1000000
+	else:
+		return (2.0 * ups) / sr_size / (1.0 * elapsed_time_minutes / 120) * 1000000
 
 # gives score to each post in d, sorts and takes top ones
 def score_sort(d):
-    result_list = []
-    for key, value in d.iteritems():
-        result_list.append((key, score(value[0],value[1],value[2])))
-    result_list = sorted(result_list, key=itemgetter(1))
-    result_list.reverse()
-    print result_list
-    return result_list
+	result_list = []
+	for key, value in d.iteritems():
+		result_list.append((key, score(value[0], value[1], value[2])))
+	result_list = sorted(result_list, key=itemgetter(1))
+	result_list.reverse()
+	return result_list
 
 def test(l, n):
 	ans = []
@@ -70,7 +68,6 @@ def test(l, n):
 		utc = utc.replace(tzinfo=from_zone)
 		est = utc.astimezone(to_zone)
 		ans.append([est, submission.title, format(sub[1], '.2f'), "http://reddit.com"+str(submission.permalink), submission.preview["images"][0]["source"]["url"]])
-	return ans
 
 def main(n):
 	# d goes from post to attributes

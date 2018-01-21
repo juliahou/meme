@@ -1,10 +1,10 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
 #from meow import main
-'''import praw
+import praw
 from datetime import datetime
 from operator import itemgetter
-from dateutil import tz'''
+from dateutil import tz
 
 app = Flask(__name__)
 

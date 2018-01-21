@@ -7,6 +7,7 @@ from operator import itemgetter
 from dateutil import tz
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 from_zone = tz.gettz('UTC')
 to_zone = tz.gettz('America/New_York')

@@ -22,7 +22,7 @@ subreddit = reddit.subreddit('memes')
 sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 
 # goes through list of strings and creates subreddit instance for each
-'''
+
 def initialize_subreddits(sub_names):
 	instances = []
 	for sub in sr:
@@ -76,13 +76,14 @@ def main(n):
 	return test(score_sort(d), n)
 
 #lookup on origin?
-
+'''
 @app.route("/")
 def show_data():
 	data = main(10)
 	return render_template('index.html', data=data)'''
 @app.route("/")
 def hello():
+	main(10)
     return "Hello world!"
 
 if __name__ == "__main__":

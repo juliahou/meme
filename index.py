@@ -86,7 +86,7 @@ def show_data():
 @app.route("/")
 def hello():
 	initialize_subreddits(sr)
-    return "Hello world!"
+	return "Hello World!"
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))

@@ -1,14 +1,14 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
 #from meow import main
-import praw
+'''import praw
 from datetime import datetime
 from operator import itemgetter
-from dateutil import tz
+from dateutil import tz'''
 
 app = Flask(__name__)
 
-from_zone = tz.gettz('UTC')
+'''from_zone = tz.gettz('UTC')
 to_zone = tz.gettz('America/New_York')
 
 #from json.json_util import dumps
@@ -18,12 +18,6 @@ reddit = praw.Reddit(client_id='rueV3_rhsdbfgg',
                      user_agent='Python:com.meme:v1.0 (by /u/Leafwing)')
 
 subreddit = reddit.subreddit('memes')
-'''for submission in subreddit.rising(limit=1):
-	print vars(submission)
-    print str(datetime.utcfromtimestamp(submission.created_utc)) + " " + submission.title + " " + str(submission.ups)
-    print vars(submission)
-    print submission.subreddit.subscribers
-print datetime.utcnow()'''
 
 sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 
@@ -86,10 +80,10 @@ def main(n):
 @app.route("/")
 def show_data():
 	data = main(10)
-	return render_template('index.html', data=data)
-'''@app.route("/")
+	return render_template('index.html', data=data)'''
+@app.route("/")
 def hello():
-    return "Hello world!"'''
+    return "Hello world!"
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))

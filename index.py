@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
-import meow
+from meow import main
 app = Flask(__name__)
 
 '''@app.route("/")

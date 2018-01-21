@@ -83,7 +83,7 @@ def show_data():
 	return render_template('index.html', data=data)'''
 @app.route("/")
 def hello():
-	main(10)
+	initialize_subreddits(sr)
     return "Hello world!"
 
 if __name__ == "__main__":

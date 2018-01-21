@@ -75,15 +75,16 @@ def main(n):
 	return test(score_sort(d), n)
 
 #lookup on origin?
-'''
+
 @app.route("/")
 def show_data():
 	data = main(10)
-	return render_template('index.html', data=data)'''
+	return render_template('index.html', data=data)
+'''
 @app.route("/")
 def hello():
 	initialize_subreddits(sr)
-	return "Hello World!"
+	return "Hello World!"'''
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))

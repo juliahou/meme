@@ -20,7 +20,7 @@ subreddit = reddit.subreddit('memes')
     print submission.subreddit.subscribers
 print datetime.utcnow()'''
 
-sr = ['memes', 'dankmemes', 'DeepFriedMemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
+sr = ['memes', 'dankmemes', 'surrealmemes', 'me_irl', 'coaxedintoasnafu']
 
 # goes through list of strings and creates subreddit instance for each
 
